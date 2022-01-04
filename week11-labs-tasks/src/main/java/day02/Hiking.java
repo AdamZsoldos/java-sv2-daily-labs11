@@ -1,7 +1,5 @@
 package day02;
 
-import java.util.List;
-
 public class Hiking {
 
     public int getTotalElevation(int... heightValues) {
