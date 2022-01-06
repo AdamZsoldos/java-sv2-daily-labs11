@@ -36,4 +36,9 @@ public class Service implements Purchasable {
     public void purchase() {
         expirationDate = LocalDate.now().plusMonths(WARRANTY_DURATION);
     }
+
+    @Override
+    public Purchasable copy() {
+        return new Item(name, price);
+    }
 }

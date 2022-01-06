@@ -8,4 +8,5 @@ public interface Purchasable {
     int getPrice();
     LocalDate getExpirationDate();
     void purchase();
+    Purchasable copy();
 }

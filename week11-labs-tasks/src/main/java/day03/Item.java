@@ -41,4 +41,9 @@ public class Item implements Purchasable {
     public void purchaseWithExtendedWarranty() {
         expirationDate = LocalDate.now().plusMonths(EXTENDED_WARRANTY_DURATION);
     }
+
+    @Override
+    public Purchasable copy() {
+        return new Item(name, price);
+    }
 }

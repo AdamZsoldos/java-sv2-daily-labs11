@@ -19,7 +19,7 @@ public class Webshop {
     public void purchase(String userName, String purchasableName) {
         User user = getUserByName(userName);
         Purchasable purchasable = getPurchasableByName(purchasableName);
-        user.purchase(copyPurchasable(purchasable));
+        user.purchase(purchasable.copy());
     }
 
     private User getUserByName(String userName) {
@@ -38,14 +38,5 @@ public class Webshop {
             }
         }
         throw new IllegalArgumentException("Purchasable not found");
-    }
-
-    private Purchasable copyPurchasable(Purchasable purchasable) {
-        if (purchasable instanceof Item) {
-            return new Item(purchasable.getName(), purchasable.getPrice());
-        } else if (purchasable instanceof Service) {
-            return new Service(purchasable.getName(), purchasable.getPrice());
-        }
-        throw new IllegalStateException("Invalid purchasable");
     }
 }
