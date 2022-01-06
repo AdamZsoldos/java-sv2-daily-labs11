@@ -8,7 +8,7 @@ public class User {
     private final String name;
     private final List<Purchasable> purchases = new ArrayList<>();
     private int balance;
-    private static final int EXTENDED_WARRANTY_BALANCE_THRESHOLD_FACTOR = 3;
+    private static final int EXTENDED_WARRANTY_BALANCE_THRESHOLD_PRICE_FACTOR = 3;
     private static final double EXTENDED_WARRANTY_PRICE_FACTOR = 1.1;
 
     public User(String name, int balance) {
@@ -47,6 +47,6 @@ public class User {
     }
 
     private boolean getPurchaseWithExtendedWarranty(Purchasable purchasable) {
-        return purchasable instanceof Item && balance >= purchasable.getPrice() * EXTENDED_WARRANTY_BALANCE_THRESHOLD_FACTOR;
+        return purchasable instanceof Item && balance >= purchasable.getPrice() * EXTENDED_WARRANTY_BALANCE_THRESHOLD_PRICE_FACTOR;
     }
 }
