@@ -5,8 +5,8 @@ import java.util.List;
 
 public class Webshop {
 
-    List<Purchasable> purchasables = new ArrayList<>();
-    List<User> users = new ArrayList<>();
+    private final List<Purchasable> purchasables = new ArrayList<>();
+    private final List<User> users = new ArrayList<>();
 
     public List<Purchasable> getPurchasables() {
         return purchasables;
@@ -14,6 +14,14 @@ public class Webshop {
 
     public List<User> getUsers() {
         return users;
+    }
+
+    public void addPurchasable(Purchasable purchasable) {
+        purchasables.add(purchasable);
+    }
+
+    public void addUser(User user) {
+        users.add(user);
     }
 
     public void purchase(String userName, String purchasableName) {
