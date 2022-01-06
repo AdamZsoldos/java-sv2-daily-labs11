@@ -43,7 +43,7 @@ public class Item implements Purchasable {
     }
 
     @Override
-    public Purchasable copy() {
+    public Item copy() {
         return new Item(name, price);
     }
 }
