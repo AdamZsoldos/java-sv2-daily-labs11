@@ -39,6 +39,6 @@ public class Service implements Purchasable {
 
     @Override
     public Purchasable copy() {
-        return new Item(name, price);
+        return new Service(name, price);
     }
 }
