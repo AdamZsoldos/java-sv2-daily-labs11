@@ -1,5 +1,6 @@
 package day05;
 
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
@@ -17,7 +18,7 @@ class LotteryTest {
         assertEquals(5, lottery.getNumberOfDraws());
     }
 
-    @Test
+    @RepeatedTest(100)
     void testDraw() {
         List<Integer> numbers = lottery.draw();
         assertEquals(5, numbers.size());
