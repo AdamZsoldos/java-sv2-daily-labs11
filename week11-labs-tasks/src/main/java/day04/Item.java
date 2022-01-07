@@ -1,15 +1,16 @@
-package day03;
+package day04;
 
 import java.time.LocalDate;
 
-public class Service implements Purchasable {
+public class Item implements Purchasable {
 
     private final String name;
     private final int price;
     private LocalDate expirationDate;
-    private static final int WARRANTY_DURATION = 12;
+    private static final int WARRANTY_DURATION = 3;
+    private static final int EXTENDED_WARRANTY_DURATION = 36;
 
-    public Service(String name, int price) {
+    public Item(String name, int price) {
         this.name = name;
         this.price = price;
     }
@@ -37,8 +38,12 @@ public class Service implements Purchasable {
         expirationDate = LocalDate.now().plusMonths(WARRANTY_DURATION);
     }
 
+    public void purchaseWithExtendedWarranty() {
+        expirationDate = LocalDate.now().plusMonths(EXTENDED_WARRANTY_DURATION);
+    }
+
     @Override
-    public Service copy() {
-        return new Service(name, price);
+    public Item copy() {
+        return new Item(name, price);
     }
 }
